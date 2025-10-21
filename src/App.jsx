@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { useState } from "react";
+import Header from "./components/Header";
+import { MdDarkMode } from "react-icons/md";
+import { CiLight } from "react-icons/ci";
 function App() {
-  const [count, setCount] = useState(0)
+  const [dark, setDark] = useState(false);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={dark ? "dark" : ""}>
+      <div className="min-h-screen bg-white dark:bg-black text-black dark:text-amber-50">
+        <Header />
+        <div className="flex justify-between">
+          <h1 className="text-center pt-4 text-2xl font-bold mx-8">Menu </h1>
+          <div className="pt-4">
+            <button
+              className="mx-8 p-2 rounded-xl border "
+              onClick={() => setDark(!dark)}
+            >
+              {dark ? <MdDarkMode /> : <CiLight />}
+            </button>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
