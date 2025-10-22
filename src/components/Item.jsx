@@ -5,7 +5,7 @@ const Item = ({ photoUrl, description, dishName }) => {
       <div>
         <p className="text-lg">{dishName}</p>
         <p className="text-lg">{description}</p>
-        <button className="px-4 border my-2 rounded-lg cursor-pointer font-bold border-2">+ Cart</button>
+        <button className="px-4  my-2 rounded-lg cursor-pointer font-bold border-2">+ Cart</button>
       </div>
       <div>
         <img className="w-28 h-28" src={photoUrl} />

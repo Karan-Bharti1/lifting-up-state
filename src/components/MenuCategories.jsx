@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Category from "./Category";
 
 const MenuCategories = ({ menu }) => {
+  const [showIndex, setshowIndex] = useState(null);
   return (
     <>
-    <div className="py-4">
-      {menu.map((category) => (
-        <div key={category} className="my-6">
-         <Category category={category}/>
-        </div>
-      ))}
+      <div className="py-4">
+        {menu.map((category, index) => (
+          <div key={category} className="my-6">
+            <Category
+              category={category}
+              open={index === showIndex && true}
+              setShowIndex={() =>
+                showIndex === null ? setshowIndex(index) : setshowIndex(null)
+              }
+            />
+          </div>
+        ))}
       </div>
     </>
   );

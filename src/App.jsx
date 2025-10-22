@@ -2,16 +2,16 @@ import { useState } from "react";
 import Header from "./components/Header";
 import { MdDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
-import { CiStar } from "react-icons/ci";
+
 import restaurantData from "../data";
-import { FaStar } from "react-icons/fa";
+
 import MenuCategories from "./components/MenuCategories";
 function App() {
   const [dark, setDark] = useState(false);
   const { restaurantName, menu, restaurantRating } = restaurantData;
   return (
     <div className={dark ? "dark" : ""}>
-      <div className="min-h-screen bg-white dark:bg-amber-950 text-gray-800 dark:text-amber-500 ">
+      <div className="min-h-screen bg-white dark:bg-red-700 text-gray-800 dark:text-red-200 ">
         <Header />
         <div className="mx-20">
           <div className="flex justify-between">
