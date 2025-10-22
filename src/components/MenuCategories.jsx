@@ -12,7 +12,7 @@ const MenuCategories = ({ menu }) => {
               category={category}
               open={index === showIndex && true}
               setShowIndex={() =>
-                showIndex === null ? setshowIndex(index) : setshowIndex(null)
+                showIndex!==index ? setshowIndex(index) : setshowIndex(null)
               }
             />
           </div>
